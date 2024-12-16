@@ -1,0 +1,130 @@
+/* Estilos generales para la cabecera */
+.cabecera-principal {
+    background-color: #3A6D8C;
+    display: flex;
+    align-items: center;  // Alineamos los elementos verticalmente al centro
+    justify-content: space-between;  // Espacio entre los elementos
+    padding: 20px;
+    color: white;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    .perfil-info {
+      display: flex;
+      align-items: center;  // Alineamos los elementos en la cabecera en horizontal
+      width: 100%;
+      justify-content: space-between;  // Espacio entre los bloques
+    }
+  
+    /* Foto de perfil */
+    .foto-perfil {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+  
+      i {
+        color: #fff;
+      }
+    }
+  
+    /* Información del usuario */
+    .usuario-info {
+      flex-grow: 1;  // Esto hace que el bloque ocupe todo el espacio disponible
+      text-align: left;
+  
+      h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+  
+      p {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+  
+    /* Estadísticas */
+    .estadisticas {
+      display: flex;
+      justify-content: space-evenly;
+      flex-grow: 1;  // Ocupa todo el espacio disponible
+  
+      .estadistica {
+        text-align: center;
+        padding: 10px;
+        i {
+          font-size: 30px;
+          margin-bottom: 5px;
+        }
+  
+        p {
+          font-size: 14px;
+        }
+  
+        h3 {
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+    }
+  
+    /* Botón para compartir el perfil */
+    .acciones {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .compartir-btn {
+        background-color: #227B94;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #16325B;
+        }
+      }
+    }
+  }
+  
+  /* Barra de navegación en la cabecera */
+  .cabecera-navegacion {
+    background-color: #227B94;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+  
+      i {
+        margin-right: 8px;
+        font-size: 20px;
+      }
+  
+      &:hover {
+        color: #16325B;
+      }
+  
+      &.activo {
+        font-weight: bold;
+        color: #16325B;
+      }
+    }
+  }
+  

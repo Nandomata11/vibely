@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="main__search">
+        <form class="main__search-form">
+            <input class="main__search-bar" type="text" placeholder="Buscar">
+            <button class="main__search-submit" type="button"><img src="../../assets/search.png"></button>
+        </form>
+        <div class="main__button_group">
+            <button class="main__button_group-button" (click)="setView('publicaciones')">Publicaciones</button>
+            <button class="main__button_group-button" (click)="setView('cuentas')">Cuentas</button>
+            <button class="main__button_group-button" (click)="setView('comunidades')">Comunidades</button>
+        </div>
+        <div class="main__content">
+            <ng-container *ngIf="selectedView === 'cuentas'">
+                <app-cuentas></app-cuentas>
+            </ng-container>
+            <ng-container *ngIf="selectedView === 'publicaciones'">
+                <app-publicaciones></app-publicaciones>
+            </ng-container>
+            <ng-container *ngIf="selectedView === 'comunidades'">
+                <app-comunidades></app-comunidades>
+            </ng-container>
+        </div>
+    </div>
+</div>

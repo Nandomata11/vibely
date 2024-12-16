@@ -1,0 +1,18 @@
+<div class="profile-publications">
+    <main class="profile-publications__main">
+        <div class="profile-publications__grid">
+            <div class="profile-publications__post" *ngFor="let post of publicaciones">
+                <div class="profile-publications__post-header">
+                    <img class="profile-publications__post-profile" src="../../assets/noPerfil.png" alt="foto perfil">
+                    <div class="profile-publications__post-data">
+                        <p class="profile-publications__post-name">{{ post.name }}</p>
+                        <p class="profile-publications__post-date">{{ post.date }}</p>
+                    </div>
+                </div>
+                <div class="profile-publications__post-image">
+                    <img class="profile-publications__post-img" src="{{ post.img }}" alt="post">
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

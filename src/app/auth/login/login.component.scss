@@ -1,0 +1,118 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+  
+    .login-logo {
+      flex: 1;
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      img {
+        max-width: 80%;
+        height: auto;
+      }
+    }
+  
+    .login-form {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      h2 {
+        margin-bottom: 20px;
+      }
+  
+      .form-group {
+        margin-bottom: 20px;
+  
+        label {
+          font-weight: 500;
+          display: block;
+          margin-bottom: 5px;
+        }
+  
+        input {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+  
+          &:focus {
+            outline: none;
+            border-color: #227B94;
+          }
+        }
+      }
+  
+      .options {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+  
+        a {
+          text-decoration: none;
+          color: #227B94;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .btn-primary {
+        background-color: #227B94;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #1a5e76;
+        }
+      }
+  
+      .providers {
+        margin-top: 20px;
+        text-align: center;
+  
+        .provider-btn {
+          margin: 5px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+  
+          &.google {
+            background-color: #db4437;
+            color: white;
+          }
+  
+          &.microsoft {
+            background-color: #00a4ef;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #666;
+    }
+  }
+  

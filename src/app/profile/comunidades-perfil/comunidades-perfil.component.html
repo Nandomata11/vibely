@@ -1,0 +1,10 @@
+<div class="comunidades">
+    <ul>
+      <li *ngFor="let comunidad of comunidades">
+        <p><strong>{{ comunidad.name }}</strong></p>
+        <p>{{ comunidad.description }}</p>
+        <button class="unirse-btn" (click)="unirseAComunidad(comunidad)">Unirse</button>
+      </li>
+    </ul>
+  </div>
+  

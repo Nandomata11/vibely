@@ -1,45 +1,53 @@
 <div class="side-bar">
+  <div class="side-bar__menu">
     <div class="side-bar__logo">
-        <img class="side-bar__logo-img" src="" alt="Vibely logo">
+      <a class="side-bar__logo-link" routerLink="/home">
+        <img class="side-bar__logo-img" src="../../assets/VibelyLogo.jpg" alt="Vibely logo">
+      </a>
     </div>
+
     <nav class="side-bar__nav">
-        <ul class="side-bar__nav-list">
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Inicio
-                </a>
-            </li>
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Búsqueda
-                </a>
-            </li>
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Mensajes
-                </a>
-            </li>
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Crear
-                </a>
-            </li>
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Notificaciones
-                </a>
-            </li>
-            <li class="side-bar__nav-item">
-                <a class="side-bar__nav-link" href="">
-                    <img class="side-bar__nav-icon" src="" alt="Icon description">
-                    Perfil
-                </a>
-            </li>
-        </ul>
+      <ul class="side-bar__nav-list">
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/home">
+            <img class="side-bar__nav-icon" src="../../assets/home.png" alt="Icono Inicio">
+            Inicio
+          </a>
+        </li>
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/search">
+            <img class="side-bar__nav-icon" src="../../assets/search.png" alt="Icono Búsqueda">
+            Búsqueda
+          </a>
+        </li>
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/messages">
+            <img class="side-bar__nav-icon" src="../../assets/messages.png" alt="Icono Mensajes">
+            Mensajes
+          </a>
+        </li>
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/create">
+            <img class="side-bar__nav-icon" src="../../assets/upload.png" alt="Icono Crear">
+            Crear
+          </a>
+        </li>
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/notifications" routerLinkActive="active-link">
+            <img class="side-bar__nav-icon" src="../../assets/notifications.png" alt="Icono Notificaciones">
+            Notificaciones
+          </a>
+        </li>
+        <li class="side-bar__nav-item">
+          <a class="side-bar__nav-link" routerLink="/profile" routerLinkActive="active-link">
+            <img class="side-bar__nav-icon" src="../../assets/profile.png" alt="Icono Perfil">
+            Perfil
+          </a>
+        </li>
+      </ul>
     </nav>
+  </div>
+  <div class="side-bar__toggle">
+    <button class="menu-button" (click)="toggleSidebar()"><img src="../../assets/menu.png" alt="☰"></button> 
+  </div>
 </div>
