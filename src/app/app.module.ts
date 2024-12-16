@@ -18,6 +18,7 @@ import { ComunidadesPerfilComponent } from './profile/comunidades-perfil/comunid
 import { PublicacionesPerfilComponent } from './profile/publicaciones-perfil/publicaciones-perfil.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { StoriesComponent } from './stories/stories.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RegisterComponent } from './auth/register/register.component';
     PublicacionesPerfilComponent,
     LoginComponent,
     RegisterComponent,
+    StoriesComponent,
   ],
   imports: [
     BrowserModule,

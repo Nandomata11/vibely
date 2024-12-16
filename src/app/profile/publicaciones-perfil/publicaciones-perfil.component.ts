@@ -42,12 +42,5 @@ export class PublicacionesPerfilComponent {
       description: 'Trabajando en algo emocionante. Pronto más detalles.',
       hashtags: ['#proyecto', '#creatividad', '#innovación']
     },
-    {
-      name: 'Mi nuevo proyecto',
-      date: 'Hace 5 días',
-      img: '../../assets/ejemplo2.jpg',
-      description: 'Trabajando en algo emocionante. Pronto más detalles.',
-      hashtags: ['#proyecto', '#creatividad', '#innovación']
-    }
   ];
 }
