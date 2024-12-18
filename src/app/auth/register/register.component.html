@@ -21,6 +21,12 @@
           [(ngModel)]="password" name="password" required />
       </div>
 
+      <div class="form-group">
+        <label for="password">Repetir Contraseña</label>
+        <input type="password" id="password" class="form-control" placeholder="Introduce tu contraseña"
+          [(ngModel)]="password" name="password" required />
+      </div>
+
       <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p> <!-- Mostrar mensaje de error si existe -->
 
       <button type="submit" class="btn-primary">Registrarse</button>

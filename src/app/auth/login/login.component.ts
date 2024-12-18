@@ -13,7 +13,8 @@ export class LoginComponent {
 
   // Array de usuarios de prueba
   private users = [
-    { email: 'a@a.com', password: 'a' }
+    { email: 'a@a.com', password: 'a' },
+    { email: 'admin@vibely.com', password: 'vibe1234' },
   ];
 
   constructor(private router: Router) {}  // Inyectar Router

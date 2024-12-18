@@ -1,34 +1,36 @@
 .profile-publications {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    gap:3%;
+    justify-content: start;
+    width: 100%;
+    padding-left:0;
+    margin-top: 10px;
 
     .profile-publications__main {
         width: 100%;
-        padding: 20px;
+        padding: 4%;
         overflow: auto;
     }
 
     .profile-publications__grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        justify-content: start;
+        gap: 3%;
     }
 
     .profile-publications__post {
-        display: flex;
-        flex-direction: column;
         border: 1px solid lightgrey;
-        width: 250px;
-        border-radius: 10px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
+        width: 275px;
+        min-width: 200px;
+        margin-bottom: 20px;
+        border-radius: 20px;
         transition: transform 0.2s ease;
 
         &:hover {
             transform: scale(1.05);
+            cursor: pointer;
         }
 
         .profile-publications__post-header {
@@ -64,10 +66,12 @@
 
             img {
                 width: 100%;
-                height: 250px;
+                height: 275px;
                 margin-bottom: 20px;
             }
         }
     }
 }
+
+
     

@@ -51,6 +51,13 @@
       color: #333;
       background-color: #6A9AB0;
     }
+
+    &__acciones{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 1rem;
+    }
   
     &__boton {
       align-self: center;

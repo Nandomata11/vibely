@@ -11,6 +11,8 @@ import { ComunidadesPerfilComponent } from './profile/comunidades-perfil/comunid
 import { PublicacionesPerfilComponent } from './profile/publicaciones-perfil/publicaciones-perfil.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { CommunityComponent} from './community/community.component'
+import { StoriesComponent } from './auth/stories/stories.component';
 
 const routes: Routes = [
   // Rutas independientes para Login y Registro
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'messages', component: MessagesComponent },
   { path: 'create', component: CreateComponent },
   { path: 'notifications', component: NotificationsComponent },
+  { path: 'community', component: CommunityComponent },
+  { path: 'stories', component: StoriesComponent},
   {
     path: 'profile',
     component: ProfileComponent,

@@ -9,10 +9,15 @@
                 </div>
             </div>
             <div class="home__post-image">
-                <img class="home__post-img" [src]="post.image" alt="post">
+                <img class="home__post-img" [src]="post.image" alt="post" data-bs-toggle="modal"
+                    data-bs-target="#comentariosModal" (click)="openCommentModal(i)">
                 <div class="home__post-buttons">
-                    <img class="home__post-button" [src]="post.liked ? '../../assets/likeRelleno.png' : '../../assets/like.png'" (click)="toggleLike(i)">
-                    <img class="home__post-button" src="../../assets/comments.png" (click)="openCommentModal(i)">
+                    <img class="home__post-button"
+                        [src]="post.liked ? '../../assets/likeRelleno.png' : '../../assets/like.png'"
+                        (click)="toggleLike(i)">
+                    <!-- Imagen de comentarios -->
+                    <img class="home__post-button" src="../../assets/comments.png" data-bs-toggle="modal"
+                        data-bs-target="#comentariosModal" (click)="openCommentModal(i)">
                     <img class="home__post-button" src="../../assets/share.png" (click)="goToMessages()">
                 </div>
             </div>
@@ -26,10 +31,46 @@
     </main>
     <div class="home__stories">
         <ul class="home__stories-list">
-            <li class="home__stories-item" *ngFor="let story of stories">
-                <img class="home__stories-image" [src]="story.image" alt="perfil del dueño de la historia">
-                <p class="home__stories-name">{{ story.name }}</p>
-            </li>
+            <a routerLink="/stories">
+                <li class="home__stories-item" *ngFor="let story of stories">
+                    <img class="home__stories-image" [src]="story.image" alt="perfil del dueño de la historia">
+                    <p class="home__stories-name">{{ story.name }}</p>
+                </li>
+            </a>
         </ul>
+    </div>
+</div>
+
+<!-- Modal para comentarios o imagen -->
+<div class="modal fade publi__modal" id="comentariosModal" tabindex="-1" aria-labelledby="comentariosModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog publi__modal-dialog">
+        <div class="modal-content publi__modal-content">
+            <!-- Cuerpo del Modal -->
+            <div class="modal-body publi__modal-body">
+                <!-- Imagen a la izquierda -->
+                <div class="publi__modal-left">
+                    <img [src]="selectedPostImage" alt="Imagen del post" class="img-fluid publi__modal-image" />
+                </div>
+                <!-- Columna derecha (Comentarios y Formulario) -->
+                <div class="publi__modal-right">
+                    <!-- Input de texto y botón para enviar -->
+                    <div class="publi__modal-comment-input">
+                        <input type="text" class="form-control publi__modal-comment-input-field"
+                            placeholder="Escribe un comentario..." />
+                        <button class="btn btn-primary publi__modal-comment-button"><img
+                                class="publi__modal-comment-button-img" src="../../assets/messages.png"
+                                alt="Enviar"></button>
+                    </div>
+                    <!-- Lista de comentarios -->
+                    <div class="publi__modal-comments-list">
+                        <div class="publi__modal-comment" *ngFor="let comment of selectedPostComments">
+                            <p><strong class="publi__modal-comment-username">{{ comment.username }}:</strong> {{
+                                comment.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

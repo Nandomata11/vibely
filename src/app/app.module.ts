@@ -18,7 +18,8 @@ import { ComunidadesPerfilComponent } from './profile/comunidades-perfil/comunid
 import { PublicacionesPerfilComponent } from './profile/publicaciones-perfil/publicaciones-perfil.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { StoriesComponent } from './stories/stories.component';
+import { StoriesComponent } from './auth/stories/stories.component';
+import { CommunityComponent } from './community/community.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { StoriesComponent } from './stories/stories.component';
     LoginComponent,
     RegisterComponent,
     StoriesComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,
