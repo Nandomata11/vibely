@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Importar Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,31 +7,45 @@ import { Router } from '@angular/router';  // Importar Router
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email: string = '';  // Campo para el correo electrónico
-  password: string = '';  // Campo para la contraseña
-  errorMessage: string = '';  // Mensaje de error en caso de credenciales incorrectas
+  email: string = '';
+  password: string = '';
+  resetEmail: string = '';
+  showForgotPassword: boolean = false;
+  resetMessage: string = '';
+  resetError: string = '';
 
-  // Array de usuarios de prueba
-  private users = [
-    { email: 'a@a.com', password: 'a' }
-  ];
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) {}  // Inyectar Router
+  toggleForgotPassword() {
+    this.showForgotPassword = !this.showForgotPassword;  // Cambiar el estado para mostrar u ocultar el cuadro
+  }
 
-  // Método de inicio de sesión
-  onLogin() {
-    const user = this.users.find(
-      (u) => u.email === this.email && u.password === this.password
-    );
+  onSubmit() {
+    // Usuario y contraseña predeterminados
+    const validEmail = 'a@a.com';
+    const validPassword = 'a';
 
-    if (user) {
-      this.errorMessage = '';  // Limpiar mensaje de error
-      console.log('Login exitoso');
-      
-      // Redirigir a la página principal (home) si las credenciales son correctas
+    // Verificar si el correo y la contraseña coinciden con los valores predeterminados
+    if (this.email === validEmail && this.password === validPassword) {
+      // Redirigir al usuario a la página principal
       this.router.navigate(['/home']);
     } else {
-      this.errorMessage = 'Credenciales inválidas';
+      // Si las credenciales no coinciden, mostrar un mensaje de error
+      this.resetError = 'Correo o contraseña incorrectos.';
     }
+  }
+
+  onSubmitForgotPassword() {
+    if (this.resetEmail) {
+      this.resetMessage = 'Se ha enviado el enlace de restablecimiento al correo.';
+      this.resetError = '';
+    } else {
+      this.resetMessage = '';
+      this.resetError = 'Por favor ingresa un correo válido.';
+    }
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);  // Redirige a la página de registro
   }
 }

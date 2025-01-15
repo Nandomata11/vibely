@@ -1,4 +1,4 @@
-<div class="messages-container">
+<div class="messages-container" [ngStyle]="{'height': height}">
 
     <div class="messages-list">
         <div class="messages-list__item" *ngFor="let conversation of conversations" (click)="selectConversation(conversation)">
@@ -29,3 +29,4 @@
         </div>
     </div>
 </div>
+

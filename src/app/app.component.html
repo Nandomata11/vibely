@@ -1,13 +1,1 @@
-<div class="content" *ngIf="!isAuthPage()">
-  <div class="side-bar">
-    <app-side-bar></app-side-bar>
-  </div>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
-
-<!-- Login/Registro usan directamente el router-outlet -->
-<div *ngIf="isAuthPage()">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

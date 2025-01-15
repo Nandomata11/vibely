@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./community.component.scss']
 })
 export class CommunityComponent {
+  isJoined: boolean = false; // Estado inicial del botón
 
+  toggleJoin(): void {
+    this.isJoined = !this.isJoined; // Cambia el estado al hacer clic
+  }
 }

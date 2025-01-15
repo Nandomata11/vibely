@@ -1,0 +1,31 @@
+<div class="comunidades">
+    <div *ngFor="let comunidad of comunidades" class="comunidades__comunidad">
+      <img
+        class="comunidades__imagen"
+        src="../../assets/noFoto.png"
+        alt="Imagen de la comunidad"
+      />
+      <div class="comunidades__contenido">
+        <div class="comunidades__nombre">{{ comunidad.nombre }}</div>
+        <div class="comunidades__descripcion">{{ comunidad.descripcion }}</div>
+        <div class="comunidades__miembros">{{ comunidad.miembros }} miembros</div>
+        <div class="comunidades__cards">
+          <div class="comunidades__card" *ngFor="let miembro of comunidad.miembrosLista">
+            {{ miembro }}
+          </div>
+        </div>
+      </div>
+      <div class="comunidades__acciones">
+        <a routerLink="/community" class="comunidades__enlace">
+          <button class="comunidades__boton comunidades__boton--ver">Ver Comunidad</button>
+        </a>
+        <button
+          class="comunidades__boton"
+          (click)="toggleJoin(comunidad)"
+        >
+          {{ comunidad.unido ? 'Miembro' : 'Unirse' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,1 +1,170 @@
-<p>community works!</p>
+<div class="community">
+    <div class="community__header">
+        <div class="community__info">
+            <div class="community__photo">
+                <img src="../../assets/noFoto.png" alt="Foto Comunidad">
+            </div>
+
+            <div class="community__details">
+                <h2 class="community__details-name">Nombre de la Comunidad</h2>
+                <p class="community__details-description">Descripción breve de la comunidad</p>
+            </div>
+            <div class="community__stats">
+                <div class="community__stats-stat">
+                    <p class="community__stat-title">Miembros</p>
+                    <h3 class="community__stat-value">123 miembros</h3>
+                </div>
+            </div>
+
+            <div class="community__actions">
+                <button class="community__join-btn" [ngStyle]="{'background-color': isJoined ? '#001F3F' : '#6A9AB0'}"
+                    (click)="toggleJoin()">
+                    {{ isJoined ? 'Abandonar' : 'Unirse' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="publicaciones">
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo3.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo1.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo2.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo2.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo3.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo1.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo2.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+    <div class="post">
+        <div class="post__header">
+            <img class="post__profile" src="../../assets/noPerfil.png" alt="foto perfil">
+            <div class="post__data">
+                <p class="post__name">ejemplo</p>
+                <p class="post__date">hace 2 dias - Sevilla</p>
+            </div>
+        </div>
+        <div class="post__image">
+            <img class="post__img" src="../../assets/ejemplo2.jpg" alt="post" data-bs-toggle="modal"
+                data-bs-target="#comentariosModal">
+        </div>
+    </div>
+</div>
+
+<!-- Modal para comentarios o imagen -->
+<div class="modal fade publi__modal" id="comentariosModal" tabindex="-1" aria-labelledby="comentariosModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog publi__modal-dialog">
+        <div class="modal-content publi__modal-content">
+            <!-- Cuerpo del Modal -->
+            <div class="modal-body publi__modal-body">
+                <!-- Imagen a la izquierda -->
+                <div class="publi__modal-left">
+                    <img src="../../assets/ejemplo2.jpg" alt="Imagen del post" class="img-fluid publi__modal-image" />
+                </div>
+                <!-- Columna derecha (Comentarios y Formulario) -->
+                <div class="publi__modal-right">
+                    <!-- Input de texto y botón para enviar -->
+                    <div class="publi__modal-comment-input">
+                        <input type="text" class="form-control publi__modal-comment-input-field"
+                            placeholder="Escribe un comentario..." />
+                        <button class="btn btn-primary publi__modal-comment-button"><img
+                                class="publi__modal-comment-button-img" src="../../assets/messages.png"
+                                alt="Enviar"></button>
+                    </div>
+                    <!-- Lista de comentarios -->
+                    <div class="publi__modal-comments-list">
+                        <div class="publi__modal-comment">
+                            <p><strong class="publi__modal-comment-username">Usuario1:</strong> No me sigue</p>
+                            <p><strong class="publi__modal-comment-username">Usuario2:</strong> No me sigue</p>
+                            <p><strong class="publi__modal-comment-username">Usuario3:</strong> pues yo creo que se le
+                                puede pillar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

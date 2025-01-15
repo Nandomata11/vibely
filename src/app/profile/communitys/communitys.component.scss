@@ -1,0 +1,65 @@
+.comunidades {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;  // Reduce el margen para que el botón quede más cerca
+  }
+
+  li {
+    margin-bottom: 20px;  // Aumenta el espacio entre las comunidades
+    padding: 15px;  // Aumenta el padding dentro de la tarjeta
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .comunidad-card{
+    border: 1px solid #3A6D8C;
+    padding: 1rem;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: center;
+    gap: 1rem;
+
+    img{
+      border-radius: 100%;
+      max-width: 125px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  }
+
+  .acceder-btn {
+    background-color: #227B94;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;  // Reduce el margen superior para acercar el botón al título
+    align-self: flex-start;  // Alinea el botón con el contenido
+
+    &:hover {
+      background-color: #16325B;
+    }
+  }
+}

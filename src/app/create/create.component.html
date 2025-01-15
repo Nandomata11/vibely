@@ -1,32 +1,61 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Encabezado del Modal -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearPublicacionModalLabel">Subir Publicación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
 
-<!-- src/app/create-post/create-post.component.html -->
-<div class="create-post-container">
-    <h2>Crear Publicación</h2>
-  
-    <!-- Formulario para la creación de la publicación -->
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="file">Seleccionar archivo (imagen o video)</label>
-        <input type="file" id="file" (change)="onFileChange($event)" accept="image/*,video/*" />
+      <!-- Barra separadora -->
+      <hr class="m-0" />
+
+      <!-- Imagen predeterminada o previsualización del archivo seleccionado -->
+      <div class="text-center mt-3" *ngIf="!selectedFile">
+        <img src="../../assets/imagen.jpg" alt="Imagen predeterminada" class="img-fluid" style="max-height: 150px; object-fit: cover;" />
       </div>
-  
-      <div class="form-group">
-        <label for="description">Descripción</label>
-        <textarea id="description" [(ngModel)]="description" name="description" rows="4" placeholder="Escribe una descripción..."></textarea>
+
+      <div class="text-center mt-3" *ngIf="selectedFile">
+        <div *ngIf="isImage">
+          <img [src]="previewUrl" alt="Vista previa de la imagen" class="img-fluid" style="max-height: 150px; object-fit: cover;" />
+        </div>
+        <div *ngIf="isVideo">
+          <video [src]="previewUrl" controls class="img-fluid" style="max-height: 150px;"></video>
+        </div>
       </div>
-  
-      <button type="submit" [disabled]="!selectedFile" class="submit-button">Subir Publicación</button>
-    </form>
-  
-    <!-- Vista previa del archivo seleccionado -->
-    <div *ngIf="selectedFile">
-      <h3>Vista Previa</h3>
-      <div *ngIf="isImage">
-        <img [src]="previewUrl" alt="Vista previa de la imagen" class="preview-image" />
+
+      <!-- Botón para seleccionar una imagen o video -->
+      <div class="text-center mt-3 mb-3">
+        <label class="btn btn-primary">
+          Seleccionar Imagen/Video
+          <input type="file" id="file" (change)="onFileChange($event)" accept="image/*,video/*" hidden />
+        </label>
       </div>
-      <div *ngIf="isVideo">
-        <video [src]="previewUrl" controls class="preview-video"></video>
+
+      <!-- Segunda Barra separadora -->
+      <hr class="m-0" />
+
+      <!-- Cuerpo del Modal -->
+      <div class="modal-body">
+        <!-- Formulario -->
+        <form (ngSubmit)="onSubmit()" class="d-flex justify-content-between align-items-center">
+          <!-- Input de texto -->
+          <div class="form-group flex-grow-1 me-2">
+            <input 
+              type="text" 
+              id="description" 
+              [(ngModel)]="description" 
+              name="description" 
+              class="form-control" 
+              placeholder="Escribe una descripción..." 
+              required 
+            />
+          </div>
+
+          <!-- Botón de enviar -->
+          <button type="submit" [disabled]="!selectedFile" class="btn btn-success bg-primary">
+            Publicar
+          </button>
+        </form>
       </div>
     </div>
   </div>
-  
