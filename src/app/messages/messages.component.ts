@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-messages',
@@ -48,6 +48,21 @@ export class MessagesComponent {
         text: this.newMessage
       });
       this.newMessage = '';
+    }
+  }
+
+  height: string = '100vh'; // Inicialmente en 100% en pantallas grandes
+  isMobile: boolean = false; // Para saber si estamos en una pantalla pequeña
+
+  // Escucha cambios en el tamaño de la ventana
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.isMobile = event.target.innerWidth <= 768;
+    // Si estamos en pantalla pequeña, establecemos la altura en fit-content
+    if (this.isMobile) {
+      this.height = '90vh';
+    } else {
+      this.height = '100vh'; // Devolvemos a 100% cuando no es pantalla pequeña
     }
   }
 }

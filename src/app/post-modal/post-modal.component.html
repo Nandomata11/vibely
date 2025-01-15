@@ -1,0 +1,29 @@
+<div class="modal-dialog publi__modal-dialog">
+    <div class="modal-content publi__modal-content">
+        <!-- Cuerpo del Modal -->
+        <div class="modal-body publi__modal-body">
+            <!-- Imagen a la izquierda -->
+            <div class="publi__modal-left">
+                <img [src]="selectedPostImage" alt="Imagen del post" class="img-fluid publi__modal-image" />
+            </div>
+            <!-- Columna derecha (Comentarios y Formulario) -->
+            <div class="publi__modal-right">
+                <!-- Input de texto y botón para enviar -->
+                <div class="publi__modal-comment-input">
+                    <input type="text" class="form-control publi__modal-comment-input-field"
+                        placeholder="Escribe un comentario..." />
+                    <button class="btn btn-primary publi__modal-comment-button"><img
+                            class="publi__modal-comment-button-img" src="../../assets/messages.png"
+                            alt="Enviar"></button>
+                </div>
+                <!-- Lista de comentarios -->
+                <div class="publi__modal-comments-list">
+                    <div class="publi__modal-comment" *ngFor="let comment of selectedPostComments">
+                        <p><strong class="publi__modal-comment-username">{{ comment.username }}:</strong> {{
+                            comment.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

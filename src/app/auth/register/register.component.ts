@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Importar Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,33 +7,61 @@ import { Router } from '@angular/router';  // Importar Router
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  name: string = '';  // Campo para el nombre completo
-  email: string = '';  // Campo para el correo electrónico
-  password: string = '';  // Campo para la contraseña
-  errorMessage: string = '';  // Mensaje de error en caso de fallar el registro
+  name: string = '';
+  username: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
+  errorMessage: string = '';
+  confirmationMessage: string = '';
+  isUsernameTaken: boolean = false;
+  isEmailTaken: boolean = false;
+  passwordMismatch: boolean = false;
 
-  // Array de usuarios de prueba
   private users = [
-    { email: 'a@a.com', password: 'a' }
+    { username: 'user1', email: 'user1@vibely.com' },
+    { username: 'a', email: 'a@a.com' },
+    { username: 'user2', email: 'user2@vibely.com' }
   ];
 
-  constructor(private router: Router) {}  // Inyectar Router
+  constructor(private router: Router) {}
 
-  // Método para manejar el registro
   onRegister() {
-    // Verificar si ya existe un usuario con el mismo correo
-    const existingUser = this.users.find((u) => u.email === this.email);
+    this.clearMessages();
+    this.isUsernameTaken = this.users.some(user => user.username === this.username);
+    this.isEmailTaken = this.users.some(user => user.email === this.email);
+    this.passwordMismatch = this.password !== this.confirmPassword;
 
-    if (existingUser) {
-      this.errorMessage = 'Este correo electrónico ya está registrado';
-    } else {
-      // Registrar el nuevo usuario
-      this.users.push({ email: this.email, password: this.password });
-      this.errorMessage = '';  // Limpiar mensaje de error
-      console.log('Registro exitoso');
-      
-      // Redirigir a la página principal (home) tras el registro exitoso
-      this.router.navigate(['/home']);
+    if (this.isUsernameTaken) {
+      this.errorMessage = 'El nombre de usuario ya está en uso.';
+      return;
     }
+
+    if (this.isEmailTaken) {
+      this.errorMessage = 'El correo ya está en uso.';
+      return;
+    }
+
+    if (this.passwordMismatch) {
+      this.errorMessage = 'Las contraseñas no coinciden.';
+      return;
+    }
+
+    this.users.push({ username: this.username, email: this.email });
+    this.sendConfirmationEmail(this.email);
+    this.confirmationMessage = `Correo de confirmación enviado a ${this.email}`;
+
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 3000);
+  }
+
+  sendConfirmationEmail(email: string) {
+    console.log(`Correo de confirmación enviado a ${email}`);
+  }
+
+  private clearMessages() {
+    this.errorMessage = '';
+    this.confirmationMessage = '';
   }
 }

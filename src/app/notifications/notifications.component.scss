@@ -5,56 +5,77 @@
     align-items: flex-start;
     max-height: 100%;
 
-    .content__notifications-list{
-        padding-top: 10px;
+    .content__notifications-list {
+        padding-top: 20px;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        overflow: hidden;
-    }
-
-    .content__notifications-list:hover{
         overflow-y: auto;
-    }
+        max-height: 80vh;  // Limitar la altura máxima para un diseño más compacto
+        padding-right: 5px;
+        scrollbar-width: thin; /* Estilo del scrollbar en Firefox */
 
-    .content__notifications-list::-webkit-scrollbar {
-        width: 10px;
-    }
+        /* Estilos del scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-    .content__notifications-list::-webkit-scrollbar-thumb {
-        background-color: #3A6D8C;
+        ::-webkit-scrollbar-thumb {
+            background-color: #4B92B1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        &:hover {
+            ::-webkit-scrollbar-thumb {
+                background-color: #3A6D8C;
+            }
+        }
     }
 
     .content__notification {
         display: flex;
         flex-direction: row;
         align-items: center;
-        background-color: #6A9AB0;
-        box-shadow: 2px 2px 0px 0px grey;
-        border-radius: 8px;
-        padding: 10px;
-        height: 50px;
-        margin-bottom: 5px;
-        width: 90%;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #6A9AB0;
+        border-radius: 12px;
+        padding: 12px;
+        height: 70px;
+        margin-bottom: 10px;
+        width: 95%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        /* Efecto visual al pasar el mouse */
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
 
         .content__notification-image {
             flex-shrink: 0;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             object-fit: cover;
-            border-radius: 0;
+            border-radius: 50%;
+            border: 2px solid #227B94; /* Agregar borde a la imagen */
         }
 
         .content__notification-data {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: 10px;
+            padding-left: 15px;
+            width: 100%;
 
             .content__notification-type {
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: bold;
                 color: #333;
                 margin: 0;
@@ -62,12 +83,11 @@
             }
 
             .content__notification-description {
-                margin: 0;
-                padding: 0;
+                margin: 5px 0 0 0;
                 font-size: 14px;
                 font-weight: normal;
-                color: #FFF;
-                margin: 5px 0 0 0;
+                color: #666;
+                opacity: 0.85;
             }
         }
     }

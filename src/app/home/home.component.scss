@@ -1,6 +1,5 @@
-
 .home {
-    display:flex;
+    display: flex;
     flex-direction: row;
     max-height: 100vh;
 
@@ -16,27 +15,28 @@
         overflow: hidden;
     }
 
-    .home__main:hover{
+    .home__main:hover {
         overflow: auto;
     }
 
-    .home__main::-webkit-scrollbar{
+    .home__main::-webkit-scrollbar {
         width: 4px;
     }
-     
-    .home__main::-webkit-scrollbar-thumb{
-         background-color: #3A6D8C;
+
+    .home__main::-webkit-scrollbar-thumb {
+        background-color: #3A6D8C;
     }
 
     .home__post {
         display: flex;
         flex-direction: column;
         border: 1px solid lightgrey;
-        width: 70%;
-        max-width: 400px;
+        width: 50%;
         border-radius: 20px;
+        min-width: 350px;
+        
 
-        &:hover{
+        &:hover {
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -97,7 +97,12 @@
             .home__post-button {
                 width: 30px;
                 height: 30px;
-                cursor: pointer;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.3);
+                    cursor: pointer;
+                }
             }
         }
 
@@ -139,15 +144,18 @@
         width: 15%;
         background-color: #001F3F;
         min-height: 100vh;
+        min-width: fit-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         overflow: hidden auto;
+        padding-top: 2rem;
+        gap: 1rem;
 
         .home__stories-list {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 2rem;
             padding: 0;
             list-style: none;
         }
@@ -164,10 +172,10 @@
         }
 
         .home__stories-image {
-            width: 65px;
-            height: 65px;
+            width: 50%;
+            height: 80px;
+            min-width: 80px;
             border-radius: 50%;
-            border: 2px solid #007BFF;
             cursor: pointer;
         }
 
@@ -179,118 +187,9 @@
     }
 }
 
+@media (max-width: 768px) {
+    .home__stories{
+        background-color: #6A9AB0;
 
-/* Personalización del modal */
-.publi__modal {
-    // Estilos generales para el modal
-    // Ejemplo: 
-    // background-color: rgba(0, 0, 0, 0.7);
-    padding: 0;
-  }
-  
-  .publi__modal-dialog {
-    // Estilos para el contenedor del diálogo del modal
-    // Ejemplo: 
-    max-width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  
-  .publi__modal-dialog-custom {
-    // Estilos para ajustar el tamaño del modal a un 70% de ancho
-    max-width: 70%;           /* Ajustar el tamaño del modal */
-    margin: 1.75rem auto;     /* Centrar el modal horizontalmente */
-  }
-  
-  .publi__modal-content {
-    // Estilos para el contenido del modal
-    // Ejemplo:
-    // background-color: #fff;
-    // border-radius: 8px;
-    // box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .publi__modal-body {
-    // Estilos para el cuerpo del modal
-    display: flex;
-  }
-  
-  .publi__modal-left {
-    // Estilos para la columna izquierda (imagen)
-    // Ejemplo:
-    // padding: 20px;
-    width: 80%;
-    height: 70vh;
-    border-right: 1px solid lightgray;
-  }
-  
-  .publi__modal-right {
-    // Estilos para la columna derecha (comentarios y formulario)
-    // Ejemplo:
-    // padding: 20px;
-  }
-  
-  .publi__modal-image {
-    // Estilos para la imagen dentro del modal
-    // Ejemplo:
-    // width: 100%;
-    // height: auto;
-    padding: 0%;
-    height: 100%;
-  }
-  
-  .publi__modal-comment-input {
-    // Estilos para el contenedor del input de comentario
-    display: flex;
-    align-items: center;
-    gap:3px;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
-  }
-  
-  .publi__modal-comment-input-field {
-    // Estilos para el campo de texto del comentario
-    // Ejemplo:
-    // width: 100%;
-    // padding: 8px;
-  }
-  
-  .publi__modal-comment-button {
-    // Estilos para el botón de enviar comentario
-    // Ejemplo:
-    // background-color: #007bff;
-    // color: #fff;
-    background-color: #227B94;
-    border: none;
-
-    &-img{
-        width: 25px;
-        height: 25px;
     }
-  }
-  
-  .publi__modal-comments-list {
-    // Estilos para la lista de comentarios
-    flex-grow: 1;
-    padding: 15px;
-    overflow-y: auto;
-  }
-  
-  .publi__modal-comment {
-    // Estilos para cada comentario individual
-    // Ejemplo:
-    // margin-bottom: 10px;
-  }
-  
-  .publi__modal-comment-username {
-    // Estilos para resaltar el nombre del usuario en los comentarios
-    font-weight: bold;
-  }
-  
-  /* Modificadores */
-  .publi__modal-comment--highlighted {
-    // Estilos para comentarios destacados
-    // Ejemplo:
-    // background-color: #f0f8ff;
-  }
-  
+}

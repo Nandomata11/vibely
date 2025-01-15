@@ -10,6 +10,7 @@
         <p>{{ usuario.descripcion }}</p>
       </div>
 
+
       <div class="estadisticas">
         <div class="estadistica">
           <p>Publicaciones</p>
@@ -23,23 +24,22 @@
           <p>Seguidos</p>
           <h3>{{ usuario.seguidos }}</h3>
         </div>
-      </div>
 
-      <div class="acciones">
-        <button class="compartir-btn">Compartir</button>
-        <a routerLink="/login">
-          <button class="cerrar-sesion-btn">Cerrar Sesión</button>
-        </a>
+        <div class="acciones">
+          <!--<button class="compartir-btn" (click)="goToMessages()">Compartir</button>-->
+          <a routerLink="/login">
+            <button class="cerrar-sesion-btn">Cerrar Sesión</button>
+          </a>
+        </div>
       </div>
-      
     </div>
   </div>
 
   <div class="cabecera-navegacion">
-    <a routerLink="/profile/publicaciones" routerLinkActive="activo">
+    <a routerLink="/profile/posts" routerLinkActive="activo">
       <img src="../../assets/profile.png">
     </a>
-    <a routerLink="/profile/comunidades" routerLinkActive="activo">
+    <a routerLink="/profile/communitys" routerLinkActive="activo">
       <img src="../../assets/community.png">
     </a>
   </div>

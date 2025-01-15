@@ -1,5 +1,6 @@
 .messages-container {
     display: flex;
+    flex-direction: row;
     height: 100vh;
 
     .messages-list {
@@ -101,3 +102,8 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+
+}
+

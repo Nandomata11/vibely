@@ -8,49 +8,35 @@ import { Component } from '@angular/core';
 export class CreateComponent {
   selectedFile: File | null = null;
   previewUrl: string | ArrayBuffer | null = null;
+  isImage = false;
+  isVideo = false;
   description: string = '';
-  isImage: boolean = false;
-  isVideo: boolean = false;
 
-  // Método para manejar el cambio de archivo
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
-    const file = input?.files?.[0];
+    if (input.files && input.files[0]) {
+      this.selectedFile = input.files[0];
+      const reader = new FileReader();
 
-    if (file) {
-      this.selectedFile = file;
-      this.previewFile(file);
+      reader.onload = () => {
+        this.previewUrl = reader.result;
+        this.isImage = this.selectedFile?.type.startsWith('image') || false;
+        this.isVideo = this.selectedFile?.type.startsWith('video') || false;
+      };
+
+      reader.readAsDataURL(this.selectedFile);
     }
   }
 
-  // Método para mostrar la vista previa del archivo
-  previewFile(file: File): void {
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      this.previewUrl = reader.result;
-    };
-
-    if (file.type.startsWith('image')) {
-      this.isImage = true;
-      this.isVideo = false;
-    } else if (file.type.startsWith('video')) {
-      this.isImage = false;
-      this.isVideo = true;
-    }
-
-    reader.readAsDataURL(file);
-  }
-
-  // Método para manejar el envío del formulario (sin backend)
   onSubmit(): void {
-    if (this.selectedFile && this.description) {
-      console.log('Archivo:', this.selectedFile);
-      console.log('Descripción:', this.description);
-      // Aquí se manejaría la subida al backend
-      alert('Publicación subida (Simulada)!');
-    } else {
-      alert('Por favor, selecciona un archivo y agrega una descripción');
+    alert("Subiendo post");
+    if (this.selectedFile) {
+      console.log('Subiendo publicación:', {
+        file: this.selectedFile,
+        description: this.description,
+      });
+      // Aquí puedes añadir lógica para subir la publicación al servidor.
+      this.selectedFile = null;
     }
   }
 }
