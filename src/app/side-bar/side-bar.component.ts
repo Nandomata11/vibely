@@ -36,7 +36,6 @@ export class SideBarComponent {
   }
 
   onSubmit(): void {
-    alert("Subiendo post");
     if (this.selectedFile) {
       console.log('Subiendo publicación:', {
         file: this.selectedFile,

@@ -1,304 +1,296 @@
+
 .home {
-  display: flex;
-  flex-direction: row;
-  max-height: 100vh;
-
-  .home__main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
+    display:flex;
+    flex-direction: row;
     max-height: 100vh;
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    overflow: hidden;
-  }
 
-  .home__main:hover {
-    overflow: auto;
-  }
-
-  .home__main::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .home__main::-webkit-scrollbar-thumb {
-    background-color: #3A6D8C;
-  }
-
-  .home__post {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid lightgrey;
-    width: 70%;
-    max-width: 400px;
-    border-radius: 20px;
-
-    &:hover {
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .home__post-header {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-top: 2px;
-    }
-
-    .home__post-profile {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-left: 5px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .home__post-data {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-top: 7px;
-    }
-
-    .home__post-name {
-      margin: 0;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .home__post-date {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .home__post-image {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-
-      .home__post img {
+    .home__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        max-height: 100vh;
+        gap: 20px;
+        padding: 20px;
         width: 100%;
-        max-height: 300px;
-        cursor: pointer;
-      }
+        overflow: hidden;
+    }
 
-      .home__post-buttons {
+    .home__main:hover{
+        overflow: auto;
+    }
+
+    .home__main::-webkit-scrollbar{
+        width: 4px;
+    }
+     
+    .home__main::-webkit-scrollbar-thumb{
+         background-color: #3A6D8C;
+    }
+
+    .home__post {
         display: flex;
-        flex-direction: row;
-        justify-content: start;
-        margin-left: 5px;
-        gap: 10px;
-      }
+        flex-direction: column;
+        border: 1px solid lightgrey;
+        width: 70%;
+        max-width: 400px;
+        border-radius: 20px;
 
-      .home__post-button {
-        width: 30px;
-        height: 30px;
-        transition: transform 0.2s ease;
-
-        &:hover {
-          transform: scale(1.3);
-          cursor: pointer;
+        &:hover{
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-      }
+
+        .home__post-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 2px;
+        }
+
+        .home__post-profile {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .home__post-data {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 7px;
+        }
+
+        .home__post-name {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .home__post-date {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .home__post-image {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            .home__post img {
+                width: 100%;
+                max-height: 300px;
+                cursor: pointer;
+            }
+
+            .home__post-buttons {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+                margin-left: 5px;
+                gap: 10px;
+            }
+
+            .home__post-button {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+        }
+
+        .home__post-footer {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+            .home__post-description {
+                font-size: 14px;
+                color: black;
+            }
+
+            .home__post-hashtags {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 2px;
+                list-style: none;
+                margin: auto;
+
+                .home__post-hashtag {
+                    font-size: 10px;
+                    color: #fff;
+                    background-color: #6A9AB0;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                }
+
+                .home__post-hashtag:hover {
+                    cursor: pointer;
+                    background-color: #3A6D8C;
+                }
+            }
+        }
     }
 
-    .home__post-footer {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-
-      .home__post-description {
-        font-size: 14px;
-        color: black;
-      }
-
-      .home__post-hashtags {
+    .home__stories {
+        width: 15%;
+        background-color: #001F3F;
+        min-height: 100vh;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2px;
-        list-style: none;
-        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden auto;
 
-        .home__post-hashtag {
-          font-size: 10px;
-          color: #fff;
-          background-color: #6A9AB0;
-          padding: 5px 10px;
-          border-radius: 5px;
+        .home__stories-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0;
+            list-style: none;
         }
 
-        .home__post-hashtag:hover {
-          cursor: pointer;
-          background-color: #3A6D8C;
+        .home__stories-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
-      }
+
+        .home__stories-image {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 2px solid #007BFF;
+            cursor: pointer;
+        }
+
+        .home__stories-name {
+            font-size: 16px;
+            text-align: center;
+            color: white;
+        }
     }
-  }
-
-  .home__stories {
-    width: 15%;
-    background-color: #001F3F;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden auto;
-    padding-top: 2rem;
-    gap: 1rem;
-
-    .home__stories-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 0;
-      list-style: none;
-    }
-
-    .home__stories-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-    }
-
-    .home__stories-image {
-      width: 50%;
-      height: 80px;
-      min-width: 80px;
-      border-radius: 50%;
-      border: 2px solid #007BFF;
-      cursor: pointer;
-    }
-
-    .home__stories-name {
-      font-size: 16px;
-      text-align: center;
-      color: white;
-    }
-  }
 }
 
 
 /* Personalización del modal */
 .publi__modal {
-  // Estilos generales para el modal
-  // Ejemplo: 
-  // background-color: rgba(0, 0, 0, 0.7);
-  padding: 0;
-}
-
-.publi__modal-dialog {
-  // Estilos para el contenedor del diálogo del modal
-  // Ejemplo: 
-  max-width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.publi__modal-dialog-custom {
-  // Estilos para ajustar el tamaño del modal a un 70% de ancho
-  max-width: 70%;
-  /* Ajustar el tamaño del modal */
-  margin: 1.75rem auto;
-  /* Centrar el modal horizontalmente */
-}
-
-.publi__modal-content {
-  // Estilos para el contenido del modal
-  // Ejemplo:
-  // background-color: #fff;
-  // border-radius: 8px;
-  // box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.publi__modal-body {
-  // Estilos para el cuerpo del modal
-  display: flex;
-}
-
-.publi__modal-left {
-  // Estilos para la columna izquierda (imagen)
-  // Ejemplo:
-  // padding: 20px;
-  width: 80%;
-  height: 70vh;
-  border-right: 1px solid lightgray;
-}
-
-.publi__modal-right {
-  // Estilos para la columna derecha (comentarios y formulario)
-  // Ejemplo:
-  // padding: 20px;
-}
-
-.publi__modal-image {
-  // Estilos para la imagen dentro del modal
-  // Ejemplo:
-  // width: 100%;
-  // height: auto;
-  padding: 0%;
-  height: 100%;
-}
-
-.publi__modal-comment-input {
-  // Estilos para el contenedor del input de comentario
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  padding: 10px;
-  border-bottom: 1px solid lightgray;
-}
-
-.publi__modal-comment-input-field {
-  // Estilos para el campo de texto del comentario
-  // Ejemplo:
-  // width: 100%;
-  // padding: 8px;
-}
-
-.publi__modal-comment-button {
-  // Estilos para el botón de enviar comentario
-  // Ejemplo:
-  // background-color: #007bff;
-  // color: #fff;
-  background-color: #227B94;
-  border: none;
-
-  &-img {
-    width: 25px;
-    height: 25px;
+    // Estilos generales para el modal
+    // Ejemplo: 
+    // background-color: rgba(0, 0, 0, 0.7);
+    padding: 0;
   }
-}
+  
+  .publi__modal-dialog {
+    // Estilos para el contenedor del diálogo del modal
+    // Ejemplo: 
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .publi__modal-dialog-custom {
+    // Estilos para ajustar el tamaño del modal a un 70% de ancho
+    max-width: 70%;           /* Ajustar el tamaño del modal */
+    margin: 1.75rem auto;     /* Centrar el modal horizontalmente */
+  }
+  
+  .publi__modal-content {
+    // Estilos para el contenido del modal
+    // Ejemplo:
+    // background-color: #fff;
+    // border-radius: 8px;
+    // box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .publi__modal-body {
+    // Estilos para el cuerpo del modal
+    display: flex;
+  }
+  
+  .publi__modal-left {
+    // Estilos para la columna izquierda (imagen)
+    // Ejemplo:
+    // padding: 20px;
+    width: 80%;
+    height: 70vh;
+    border-right: 1px solid lightgray;
+  }
+  
+  .publi__modal-right {
+    // Estilos para la columna derecha (comentarios y formulario)
+    // Ejemplo:
+    // padding: 20px;
+  }
+  
+  .publi__modal-image {
+    // Estilos para la imagen dentro del modal
+    // Ejemplo:
+    // width: 100%;
+    // height: auto;
+    padding: 0%;
+    height: 100%;
+  }
+  
+  .publi__modal-comment-input {
+    // Estilos para el contenedor del input de comentario
+    display: flex;
+    align-items: center;
+    gap:3px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .publi__modal-comment-input-field {
+    // Estilos para el campo de texto del comentario
+    // Ejemplo:
+    // width: 100%;
+    // padding: 8px;
+  }
+  
+  .publi__modal-comment-button {
+    // Estilos para el botón de enviar comentario
+    // Ejemplo:
+    // background-color: #007bff;
+    // color: #fff;
+    background-color: #227B94;
+    border: none;
 
-.publi__modal-comments-list {
-  // Estilos para la lista de comentarios
-  flex-grow: 1;
-  padding: 15px;
-  overflow-y: auto;
-}
-
-.publi__modal-comment {
-  // Estilos para cada comentario individual
-  // Ejemplo:
-  // margin-bottom: 10px;
-}
-
-.publi__modal-comment-username {
-  // Estilos para resaltar el nombre del usuario en los comentarios
-  font-weight: bold;
-}
-
-/* Modificadores */
-.publi__modal-comment--highlighted {
-  // Estilos para comentarios destacados
-  // Ejemplo:
-  // background-color: #f0f8ff;
-}
+    &-img{
+        width: 25px;
+        height: 25px;
+    }
+  }
+  
+  .publi__modal-comments-list {
+    // Estilos para la lista de comentarios
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  
+  .publi__modal-comment {
+    // Estilos para cada comentario individual
+    // Ejemplo:
+    // margin-bottom: 10px;
+  }
+  
+  .publi__modal-comment-username {
+    // Estilos para resaltar el nombre del usuario en los comentarios
+    font-weight: bold;
+  }
+  
+  /* Modificadores */
+  .publi__modal-comment--highlighted {
+    // Estilos para comentarios destacados
+    // Ejemplo:
+    // background-color: #f0f8ff;
+  }
+  

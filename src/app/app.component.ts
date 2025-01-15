@@ -19,7 +19,7 @@ export class AppComponent {
 
   // Método para detectar si la página actual es Login o Registro
   isAuthPage(): boolean {
-    const authRoutes = ['/login', '/register', '/stories'];
+    const authRoutes = ['/login', '/register'];
     return authRoutes.includes(this.router.url);
   }
 }

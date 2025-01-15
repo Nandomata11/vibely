@@ -80,15 +80,13 @@
     display: flex;
     flex-direction: column;  /* Cambiar la dirección a columna para apilar los botones */
     align-items: flex-end;   /* Alinea los botones a la derecha */
-    margin-left: 20px;
-    width: 20%;  /* Asegura que haya separación entre las acciones y el resto del contenido */
+    margin-left: 20px;  /* Asegura que haya separación entre las acciones y el resto del contenido */
   }
 
   .compartir-btn {
     background-color: #227B94;
     color: white;
     padding: 10px 20px;
-    width: 150px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -102,11 +100,10 @@
 
   /* Estilo para el botón de "Cerrar sesión" */
   .cerrar-sesion-btn {
-    background-color: #16325B;  /* Rojo para indicar cierre */
+    background-color: #E74C3C;  /* Rojo para indicar cierre */
     color: white;
     padding: 10px 20px;
     border: none;
-    min-width: 150px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
